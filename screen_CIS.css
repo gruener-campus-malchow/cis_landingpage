@@ -1,33 +1,177 @@
-body
-{
-	font-size: 1em;
-	font-family: Roboto, sans-serif;
-	/*overflow: hidden;*/
-	background-image:url(bg_1.png); 
-	background-attachment:fixed;
+body {
+	margin: 0;
+	background-color: #555;
+}
+
+* {
+	margin: 0;
+	font-family: 'Montserrat', 'Ubuntu', sans-serif;
+	font-size: inherit;
+	font-weight: 300;
+}
+
+p, form {
+	color: #fff;
+	padding: 0 1rem;
 }
 
 
-div.classblock
-{
-
-	border: 2px solid darkgreen;
-	border-radius: 5px;
-	/*float: left;*/
-	background-color: white;
-	margin: 5px 5px 5px 5px;
-	padding: 15px;
-	
-
-
-	/*display: -webkit-flex;
-	display: flex;*/
+.classblock {
+	border-radius: 1rem;
+	background-color: #333;
+	box-shadow: 1px 2px 4px #333;
+	margin: .5rem;
+	padding: 1rem;
+	color: #fff;
+	font-weight: 300;
+	transition: .2s;
 }
-div.classblock:hover 
-{
-    
+.classblock:hover {
+	background-color: #444;
+	box-shadow: none;
+}
+
+.textfield, .outer_wrapper {
+	margin-top: .5rem;
+}
+
+.warning {
+	background-color: #533;
+	border: 2px solid #c00;
+}
+
+/* PSA: Heading schreibt man mit einem d */
+.headding {
+	margin: .5rem 1rem;
+	color: #7a3;
+	font-size: 2rem;
+	text-shadow: 1px 2px 4px #7a37;
+}
+
+.headder {
+    display: block;
+    height: 110px;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+	color: #7a3;
+	float:left;
+}
+a:active {
+  text-decoration: underline;
+}
+.image {
+  display: inline;
+}
+.image .invisible_link {
+	height: 5rem;
+}
+img {
+	border-radius: .5rem;
+	width: 7rem;
+}
+img.logo {
+  width: auto;
+  height: 6rem;
+	margin-right: 1rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  color: #7a3;
+	font-weight: 300;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-left: 3px;
+}
+
+
+
+div.infoschalter{
+    display:inline;
+    margin-left: 20px;
+    padding: 5px;
     background-color: rgb(240,250,240);
 }
+.infotext{
+    background-color: WhiteSmoke;
+    position: absolute;
+    top:20px;
+    left: 20px;
+    width:50%;
+    height:auto;
+    max-height:70%;
+    /*pointer-events: none; */
+    display:none;
+    padding: 10px;
+    border-radius:6px;
+    border:2px solid #74b807;
+    overflow:auto;
+}
+.infoschalter:hover > .infotext {
+    /*opacity: 1;*/
+    display: block;
+    z-index: 2;
+}
+
+.infotext:hover{
+   display: block;
+   z-index: 2;
+}
+
+a.std{
+    float:none;
+    display:inline;
+}
+div.fullscreenImage{
+    background-color: black;
+    position: fixed;
+    top:0em;
+    left: 0em;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    pointer-events: auto;
+    display:block;
+    padding: 0px;
+    border:none;
+    opacity:1;
+    text-align: center;
+}
+div.controlPanel{
+    background-color: white;
+}
+div.hour{
+    border: 2px solid darkgreen;
+	background-color: white;
+	border-radius: 5px;
+	margin-top: 5px;
+	margin-left: 5px;
+	font-size: 1em;
+	overflow: auto;
+    display: inline-block;
+}
+
+a.download{
+    float:none;
+    display:inline;
+}
+table {
+  border-collapse: collapse;
+  margin: 5px;
+}
+
+table, th, td {
+  border: 1px solid black;
+  padding: 2px;
+}
+
+
+
+/* what's this??? */
 div.plakat
 {
 	border: 2px solid darkgreen;
@@ -45,118 +189,17 @@ div.plakat
 	background-repeat: no-repeat;
 }
 div.plakat:hover {
-    
+
     background-image:url(werbung_big.png);
     width:414px;
 	 height: 585px;
 }
 
-div.textfield
-{
 
-	border: 2px solid darkgreen;
-	background-color: white;
-	border-radius: 5px;
-	/*clear: left;*/
-	margin-top: 5px;
-	margin-left: 5px;
-	font-size: 1em;
-	overflow: auto;
-    display: block;
-}
 
-div.outer_wrapper
-{
 
-	border: 2px solid darkgreen;
-	background-color: white;
-	border-radius: 5px;
-	/*clear: left;*/
-	margin-top: 5px;
-	margin-left: 5px;
-    padding: 5px;
-	font-size: 1em;
-	overflow: auto;
-    display: block;
-}
 
-div.warning
-{
 
-	border: 4px dashed darkgreen;
-	background-color: MistyRose;
-	border-radius: 5px;
-	/*clear: left;*/
-	margin-top: 5px;
-	margin-left: 5px;
-    padding: 5px;
-	font-size: 1em;
-	overflow: auto;
-    display: block;
-}
-
-div.headding
-{
-	font-size: 2.2em;
-	color: darkgreen;
-	font-family: Arial Narrow;
-	font-weight: bold;
-	margin-top: 10px;
-	margin-left: 5px;
-	display: inline;
-}
-
-div.headder
-{
-    display: block;
-    height: 110px;
-}
-
-a:link, a:visited {
-   text-decoration: none;
-   font-size: 1em;
-	color: darkgreen;
-	font-family: Arial;
-	font-weight: bold;
-	margin-left: 5px;
-	margin-top: 5px;
-	/*padding: 15px;*/
-	
-	display: -webkit-flex;
-	display: flex;
-	float:left;
-}
-a:hover {
-    /*text-decoration: underline;*/
-    /*background-color: red;*/
-}
-
-a:active {
-    text-decoration: underline;
-}
-div.image
-{
-	/*float: left;*/
-    display: inline;
-}
-img
-{
- 
- box-shadow: 10px 10px 5px grey;
- border: 1px solid grey;
- width: 111px;
-}
-
-img.logo
-{
-	border: none;
-    box-shadow: none;
-    width:150px;
-    height: auto;
-}
-input{
-	margin: 5px;
-}
 img.werbung
 {
 	margin: 15px;
@@ -171,11 +214,11 @@ img.hiResImage{
     width:100%;
     max-height: 100%;
     object-fit: scale-down;
-    pointer-events: auto; 
+    pointer-events: auto;
     box-shadow: none;
 }
 img.loading{
-    pointer-events: auto; 
+    pointer-events: auto;
     object-fit: scale-down;
     box-shadow: none;
     margin-left: auto;
@@ -210,99 +253,4 @@ img.campusTV:hover
     box-shadow: 10px 10px 5px grey;
     margin-top: 0.4em;
     margin-left: 1.9em;
-}
-
-
-h2{
-    font-size: 1.2em;
-    color: DarkOrange;
-    text-shadow: 1px 1px 1px grey;
-}
-
-h3{
-    font-size: 1.2em;
-    margin-left: 3px;
-}
-
-p, form{
-    padding-left: 15px;
-    padding-right: 15px;
-}
-div.infoschalter{
-    display:inline;
-    margin-left: 20px;
-    padding: 5px;
-    background-color: rgb(240,250,240);
-}
-.infotext{
-    background-color: WhiteSmoke; 
-    position: absolute; 
-    top:20px; 
-    left: 20px; 
-    width:50%;
-    height:auto;
-    max-height:70%; 
-    /*pointer-events: none; */
-    display:none; 
-    padding: 10px; 
-    border-radius:6px; 
-    border:2px solid #74b807; 
-    overflow:auto;
-}
-.infoschalter:hover > .infotext {
-    /*opacity: 1;*/
-    display: block;
-    z-index: 2;
-}
-
-.infotext:hover{
-   display: block;
-   z-index: 2;
-}
-
-a.std{
-    float:none;
-    display:inline;
-}
-div.fullscreenImage{
-    background-color: black; 
-    position: fixed; 
-    top:0em; 
-    left: 0em; 
-    width: 100%;
-    height: 100%;
-    overflow: scroll;
-    pointer-events: auto; 
-    display:block; 
-    padding: 0px; 
-    border:none; 
-    opacity:1;
-    text-align: center;
-}
-div.controlPanel{
-    background-color: white; 
-}
-div.hour{
-    border: 2px solid darkgreen;
-	background-color: white;
-	border-radius: 5px;
-	margin-top: 5px;
-	margin-left: 5px;
-	font-size: 1em;
-	overflow: auto;
-    display: inline-block;
-}
-
-a.download{
-    float:none;
-    display:inline;
-}
-table {
-  border-collapse: collapse;
-  margin: 5px;
-}
-
-table, th, td {
-  border: 1px solid black;
-  padding: 2px;
 }
