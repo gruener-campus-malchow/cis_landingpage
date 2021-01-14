@@ -1,0 +1,41 @@
+.tdot-banner {
+  width: 100vw;
+  min-height: 70vh;
+  margin: -8px;
+  background: #eee;
+  margin-bottom: 1rem;
+  position: relative;
+  font-family: 'Montserrat', 'Ubuntu', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.tdot-header {
+  font-weight: 300;
+  font-size: 24vmin;
+  color: #7b3;
+}
+
+.tdot-body {
+  font-size: 2rem;
+}
+
+.tdot-action {
+  font-weight: inherit !important;
+  font-family: inherit !important;
+  margin: 2rem !important;
+  font-size: 2rem !important;
+  border: 2px solid #7b3;
+  color: #7b3 !important;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  transition: .2s;
+}
+
+.tdot-action:hover {
+  background-color: #7b3;
+  color: #fff !important;
+}
