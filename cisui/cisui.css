@@ -1,0 +1,128 @@
+:root {
+  --cisui-primary-color: #583;
+  --cisui-secondary-color: #7a3;
+  --cisui-error-color: #c30;
+  --cisui-highlight-color: #eee;
+  --cisui-border-color: #666;
+  --cisui-placeholder-color: #777;
+  --cisui-input-background-color: #fff1;
+}
+
+.cisui-checkbox, .cisui-radio, .cisui-text {
+  position: relative;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+  display: block;
+}
+.cisui-text {
+  margin-top: 1em;
+  width: 16em;
+}
+
+.cisui-checkbox input, .cisui-radio input {
+  position: absolute;
+  left: -9999px;
+}
+
+.cisui-text input {
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  box-sizing: border-box;
+  width: 100%;
+  padding: .2em .5em;
+  background-color: var(--cisui-input-background-color);
+  border: 1px solid var(--cisui-border-color);
+  border-radius: 4px;
+  outline: 0;
+  box-shadow: none;
+  transition: border .2s;
+}
+
+.cisui-text input:focus, .cisui-text input:not(:placeholder-shown), .cisui-text input:hover {
+  border-color: var(--cisui-primary-color);
+}
+
+.cisui-text input:invalid {
+  border-color: var(--cisui-error-color);
+}
+
+.cisui-checkbox .label, .cisui-radio .label, .cisui-text .label {
+  display: flex;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.cisui-text .label {
+  position: absolute;
+  top: .2em;
+  left: .6em;
+  color: var(--cisui-placeholder-color);
+  transform-origin: -1em -6em;
+  transition: color .2s, transform .2s;
+  pointer-events: none;
+}
+
+.cisui-text input:focus + .label, .cisui-text input:not(:placeholder-shown) + .label {
+  transform: scale(.8);
+  color: var(--cisui-secondary-color);
+}
+
+.cisui-text input:invalid:focus + .label, .cisui-text input:invalid:not(:placeholder-shown) + .label {
+  color: var(--cisui-error-color);
+}
+
+.cisui-checkbox .label::before, .cisui-radio .label::before {
+  content: '';
+  width: 1em;
+  height: 1em;
+  box-sizing: border-box;
+  border: 1px solid var(--cisui-border-color);
+  margin-right: .5em;
+}
+.cisui-checkbox .label::before {
+  border-radius: .2em;
+  transition: border .1s .1s;
+}
+.cisui-radio .label::before {
+  border-radius: 50%;
+  transition: border .2s, background .2s;
+}
+
+.cisui-checkbox .label:hover::before, .cisui-radio .label:hover::before {
+  border-color: var(--cisui-primary-color);
+}
+
+.cisui-checkbox .label::after {
+  content: '';
+  position: absolute;
+  margin-left: .25em;
+  margin-bottom: .1em;
+  width: .4em;
+  height: .2em;
+  border: solid var(--cisui-highlight-color);
+  border-width: 0 0 .1em .1em;
+  transform: rotate(-45deg);
+  opacity: 0;
+  transition: opacity .1s;
+}
+
+.cisui-checkbox input:checked + .label::before {
+  border-width: .5em;
+  border-color: var(--cisui-secondary-color);
+  transition: border .1s;
+}
+
+.cisui-checkbox input:checked + .label::after {
+  opacity: 1;
+  transition: opacity .1s .1s;
+}
+
+.cisui-radio input:checked + .label::before {
+  border-width: .3em;
+  border-color: var(--cisui-secondary-color);
+  background-color: var(--cisui-highlight-color);
+}
