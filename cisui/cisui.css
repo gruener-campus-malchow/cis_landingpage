@@ -90,6 +90,7 @@
 .cisui-radio .label::before {
   border-radius: 50%;
   transition: border .2s, background .2s;
+  transition-timing-function: ease-in;
 }
 
 .cisui-checkbox .label:hover::before, .cisui-radio .label:hover::before {
