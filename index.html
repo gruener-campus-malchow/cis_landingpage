@@ -1,39 +1,50 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
 	<title>Campus Informations System</title>
-	<link rel="stylesheet" href="screen_CIS.css" media="screen">
-	<link rel="stylesheet" href="screen_tdot.css" media="screen">
-	<style>
-	</style>
+	<link rel="stylesheet" href="screen_CIS.css">
+	<link rel="stylesheet" href="screen_tdot.css">
 </head>
 <body>
-                <form action="https://www.ecosia.org/search" method="GET" style="margin-bottom:10px; margin-top :10px;float: right;">
-                   
-                    <input type="text" name="q" >
-                    <button type="submit">Umweltfreundlich suchen</button>
-                </form>
-		<div class=tdot-banner>
-	    <div class=tdot-header>TDOT '21</div>
-	    <div class=tdot-body>Tag der offenen Tür am Grünen Campus Malchow</div>
-	    <a class=tdot-action href="/fb/tdot2021/">Mehr Erfahren</a>
-	    <span class=tdot-action>ausblenden</span>
-	  </div>
+	<form class=search-bar action="https://www.ecosia.org/search" method=GET>
+		<input class=search-input type=text name=q placeholder="Umweltfreundlich suchen">
+		<button class=search-button type=submit><svg class=search-icon viewBox="-2 -2 20 20"><path d="M6,0A6,6 0 01 6,12 6,6 0 01 6,0zM10.25,10.25L16,16"/></svg></button>
+	</form>
+
+
+	<div class=tdot-banner>
+		<div class=tdot-header>TDOT '21</div>
+		<div class=tdot-body>Tag der offenen Tür am Grünen Campus Malchow</div>
+		<a class=tdot-action href="/fb/tdot2021/">Mehr Erfahren</a>
+		<a class=tdot-hide href="/">ausblenden</a>
+	</div>
+
+
+	<script>
+	document.querySelector('a.tdot-hide').addEventListener('click', (e) => {
+		document.cookie = 'tdotBannerHidden=true'; // note that setting the cookie to false won't show the banner again
+		document.querySelector('.tdot-banner').style.marginTop = `-${document.querySelector('.tdot-banner').offsetHeight}px`;
+		e.preventDefault();
+	});
+	// this regex could be used to read the cookie as well, that's why it's more complicated than it needed to be to check if the cookie exists
+	if (document.cookie.match(/(^| )tdotBannerHidden=([^;]+)/)) document.querySelector('.tdot-banner').style.display = 'none';
+	</script>
+	<noscript><style> .tdot-hide { display: none } </style></noscript>
+
 
 	<div class="textfield">
 
-            <div class="image"><a href="/" class="invisible_link"><img src="logo_white.svg" alt="logo_gcm" class="logo"></a></div>
-		    <div class="headding">Campus Informations System</div>
-		    <p>Services für das Lernen und Lehren
-                
-            </p>
-       <a href="https://gcm.schule/fb/tdot2021/">
+<div class="image"><a href="/" class="invisible_link"><img src="logo_white.svg" alt="logo_gcm" class="logo"></a></div>
+<div class="headding">Campus Informations System</div>
+<p>Services für das Lernen und Lehren
+
+</p>
+<a href="https://gcm.schule/fb/tdot2021/">
 			<div class="classblock">
 
 				<img src="logo_tdot2021.png" alt="logo tdot2021">
-				<h2>Tag der offenen Tür</h2>Video und weitere Informationen
+					<h2>Tag der offenen Tür</h2>Video und weitere Informationen
 
 			</div>
 		</a>
@@ -94,58 +105,58 @@
 		</a>
 		-->
 
-        <a href="https://cis.gruener-campus-malchow.de/timer.html">
-			<div class="classblock">
+<a href="https://cis.gruener-campus-malchow.de/timer.html">
+<div class="classblock">
 
-					<img src="logo_CampusTimer.png" alt="logo campus timer grüner campus malchow">
-					<h2>Campus Timer</h2>Minuten Countdown
-			</div>
-		</a>
-        <a href="https://gcm.schule/wififilter">
-			<div class="classblock">
+<img src="logo_CampusTimer.png" alt="logo campus timer grüner campus malchow">
+<h2>Campus Timer</h2>Minuten Countdown
+</div>
+</a>
+<a href="https://gcm.schule/wififilter">
+<div class="classblock">
 
-					<img src="logo_macfilter.png" alt="logo campus mac filter">
-					<h2>Wifi Filter</h2>Register your Computer
-			</div>
-		</a>
+<img src="logo_macfilter.png" alt="logo campus mac filter">
+<h2>Wifi Filter</h2>Register your Computer
+</div>
+</a>
 
 
-       <a href="https://gcm.schule/tv">
-			<div class="classblock">
+<a href="https://gcm.schule/tv">
+<div class="classblock">
 
-				<img src="logo_campustv.png" alt="logo campustv">
-				<h2>campusTV</h2>Infos, Lernen und Unterhaltung
+<img src="logo_campustv.png" alt="logo campustv">
+<h2>campusTV</h2>Infos, Lernen und Unterhaltung
 
-			</div>
-		</a>
+</div>
+</a>
 
-		<a href="https://de.wikipedia.org/wiki/Gr%C3%BCner_Campus_Malchow">
-			<div class="classblock">
+<a href="https://de.wikipedia.org/wiki/Gr%C3%BCner_Campus_Malchow">
+<div class="classblock">
 
-					<img src="logo_wikipedia.png" alt="logo artikel wikipedia grüner campus malchow">
-					<h2>Wikipedia GCM</h2>Eintrag zu unserer Schule
-			</div>
-		</a>
-        <a href="https://gcm.schule/printer">
-			<div class="classblock">
+<img src="logo_wikipedia.png" alt="logo artikel wikipedia grüner campus malchow">
+<h2>Wikipedia GCM</h2>Eintrag zu unserer Schule
+</div>
+</a>
+<a href="https://gcm.schule/printer">
+<div class="classblock">
 
-					<img src="logo_printer.png" alt="logo campus printer">
-					<h2>Drucker / Kopierer</h2>Hinweise und Links
-			</div>
-		</a>
-        <a href="http://fbi.gruener-campus-malchow.de/cis/wetterstation/">
-			<div class="classblock">
+<img src="logo_printer.png" alt="logo campus printer">
+<h2>Drucker / Kopierer</h2>Hinweise und Links
+</div>
+</a>
+<a href="http://fbi.gruener-campus-malchow.de/cis/wetterstation/">
+<div class="classblock">
 
-					<img src="logo_wetterstation.png" alt="logo wetterstation">
-					<h2>Wetterstation</h2>Messungen vom Dach des FG III
-			</div>
-		</a>
-        <a href="http://fbi.gruener-campus-malchow.de/spiele/hangman/">
-			<div class="classblock">
+<img src="logo_wetterstation.png" alt="logo wetterstation">
+<h2>Wetterstation</h2>Messungen vom Dach des FG III
+</div>
+</a>
+<a href="http://fbi.gruener-campus-malchow.de/spiele/hangman/">
+<div class="classblock">
 
-					<img src="logo_hangman.png" alt="logo hangman">
-					<h2>Hangman</h2>Ein Ratespiel für Begriffe
-			</div>
+<img src="logo_hangman.png" alt="logo hangman">
+<h2>Hangman</h2>Ein Ratespiel für Begriffe
+</div>
 		</a>
 
 	</div>

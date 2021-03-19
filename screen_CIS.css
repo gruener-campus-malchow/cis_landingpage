@@ -16,6 +16,61 @@ p, form {
 }
 
 
+
+/* BEGIN REDESIGN */
+
+.search-bar {
+	position: fixed;
+	top: 1.2rem;
+	right: 1.2rem;
+	padding: 0;
+	border-radius: .5rem;
+	overflow: hidden;
+	box-shadow: .1rem .2rem .4rem #444;
+	display: flex;
+	z-index: 10;
+}
+
+.search-input {
+	margin: 0;
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	background-color: #444;
+	padding: .5rem 1rem;
+	color: #7a3;
+}
+.search-input::placeholder { opacity: 1 }
+
+.search-button {
+	padding: 0;
+	border: none;
+	width: 2.5rem;
+	background-color: #444;
+	stroke: #7a3;
+	transition: .2s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.search-button:hover {
+	background-color: #7a3;
+	stroke: #444;
+}
+
+.search-icon {
+	width: 1rem;
+	fill: none;
+	stroke-width: 1.6;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+/* END REDESIGN */
+
+
+
 .classblock {
 	border-radius: 1rem;
 	background-color: #333;
